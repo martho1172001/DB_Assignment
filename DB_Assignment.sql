@@ -27,6 +27,8 @@ create table category_product(
 "category_id" uuid not null ,
 "product_id" uuid not null );
 
+alter table category_product rename to product_category;
+
 
 create table "order"(
 "id" uuid not null default uuid_generate_v4(),
@@ -52,7 +54,7 @@ create table address(
 "pincode" character varying,
 constraint "PK_addressidpkconstraint" primary key ("id"));
 
-truncate ;
+
 
 INSERT INTO "e-commerce"."user"
 (id, "name", address_id, phone_number, email, "password")
